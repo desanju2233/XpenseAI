@@ -4,6 +4,7 @@ from PIL import Image
 import pytesseract
 import spacy
 import pandas as pd
+import subprocess
 
 try:
     nlp = spacy.load("en_core_web_sm")
