@@ -1,0 +1,12 @@
+streamlit
+sqlite3
+spacy
+pytesseract
+pillow
+pandas
+numpy
+plotly
+pytest
+tensorflow
+scikit-learn
+joblib
