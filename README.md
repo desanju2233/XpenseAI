@@ -13,19 +13,19 @@ This is a Streamlit-based web application designed for personal finance manageme
 
 ## Project Structure
 
-XpenseAI/ ├── app.py # Main Streamlit app entry point
-├── auth.py # Handles user authentication logic
-├── savings_prediction.py # Implements savings prediction using ML model
-├── train_model.ipynb # Jupyter notebook for training the ML model
-├── savings_model.h5 # Pre-trained TensorFlow model for savings prediction
-├── scaler.pkl # StandardScaler for numerical feature preprocessing
-├── encoder.pkl # OneHotEncoder for categorical feature preprocessing
-├── requirements.txt # List of dependencies for deployment
-├── db_init.py # Database initialization and setup
-├── expense_input.py # Handles user expense input and data collection
-├── dashboard.py # Implements dashboard visualization for analytics
-├── user_actions.py # Manages user actions like setting savings goals
-└── README.md # Project documentation and setup instructions
+- **`app.py`**: Main entry point for the Streamlit app. Initializes the database, handles navigation (Dashboard, Add Expense, Record Payment, Savings Goals, Savings Prediction), and integrates all modules.
+- **`auth.py`**: Manages user login and registration, storing credentials in `xpenseai.db`. Uses `st.rerun()` for single-click transitions.
+- **`savings_prediction.py`**: Implements savings prediction. Loads `savings_model.h5`, `scaler.pkl`, and `encoder.pkl` to preprocess input and predict savings. Supports manual input or database-driven predictions on the 1st of each month.
+- **`train_model.py`**: Python script to train the savings prediction model locally.
+- **`train_model.ipynb`**: Jupyter notebook for interactive model training, experimentation, and visualization.
+- **`savings_model.h5`**: Pre-trained TensorFlow model predicting savings across 8 categories.
+- **`scaler.pkl`**: `StandardScaler` object for normalizing numerical features.
+- **`encoder.pkl`**: `OneHotEncoder` object for encoding categorical features (`Occupation`, `City_Tier`) with `drop='first'`.
+- **`requirements.txt`**: Lists Python dependencies for running and deploying the app.
+- **`db_init.py`**: Initializes `xpenseai.db` with `users` and `expenses` tables (assumed).
+- **`expense_input.py`**: Handles expense input via OCR, text, or CSV (assumed).
+- **`dashboard.py`**: Displays financial data visualizations (assumed).
+- **`user_actions.py`**: Manages savings goals and payment recording (assumed).
 
 
 ### File Descriptions
@@ -141,4 +141,10 @@ Includes estimates of potential savings across different spending areas such as 
 5. **Model Depth**: Detailed every layer, preprocessing step, and training parameter.
 6. **Actionable**: Provides clear instructions for setup, training, and deployment.
 
-
+### Drawbacks
+**`Limited Model Complexity`** : The simple feedforward neural network may not capture complex spending patterns or non-linear relationships as effectively as more advanced models (e.g., LSTMs or transformers).
+**`Static Predictions`**: Predictions are based on a snapshot of data and don’t account for real-time changes or seasonal trends unless the model is retrained frequently.
+**`Dataset Dependency`**: Relies heavily on the quality and relevance of the training dataset. The Kaggle dataset may not generalize well to non-Indian demographics or atypical financial situations.
+**`Security Risks`**: Plaintext password storage in xpenseai.db poses a significant security risk if the app is deployed publicly without hashing.
+**`Incomplete Database Integration`**: Savings predictions use xpenseai.db only on the 1st of the month, limiting continuous tracking unless manually updated.
+** `Assumed Features`**: Functionality like OCR and dashboard visualizations is assumed but not fully detailed, potentially leading to incomplete user experience if not implemented.
