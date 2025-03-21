@@ -9,4 +9,3 @@ tensorflow
 scikit-learn
 joblib
 spacy
-sqlite3
