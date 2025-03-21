@@ -1,4 +1,8 @@
 # XpenseAI
+
+Website Link : https://xpenseai-hdakyhf48zmiaumv4frruw.streamlit.app/
+video description : https://drive.google.com/file/d/1bT6kFY_1GP9dtK8zGkyp764_8bmDDpf0/view?pli=1
+
 The goal of this project is an intelligent finance companion that not only simplifies expense tracking but also provides actionable insights.
 
 This is a Streamlit-based web application designed for personal finance management. It allows users to track expenses, record payments, set savings goals, and predict potential savings across various expense categories using a machine learning model. The app integrates a SQLite database for user authentication and data storage, and it features a simple neural network for savings prediction.
