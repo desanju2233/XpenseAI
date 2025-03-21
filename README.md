@@ -13,20 +13,19 @@ This is a Streamlit-based web application designed for personal finance manageme
 
 ## Project Structure
 
-XpenseAI/
-├── app.py                   # Main Streamlit app entry point
-├── auth.py                  # User authentication logic
-├── savings_prediction.py    # Savings prediction logic with ML model
-├── train_model.ipynb        # Jupyter notebook for training the model
-├── savings_model.h5         # Pre-trained TensorFlow model
-├── scaler.pkl               # StandardScaler for numerical preprocessing
-├── encoder.pkl              # OneHotEncoder for categorical preprocessing
-├── requirements.txt         # Dependencies for deployment
-├── db_init.py               # Database initialization (assumed)
-├── expense_input.py         # Expense input logic (assumed)
-├── dashboard.py             # Dashboard visualization (assumed)
-├── user_actions.py          # User actions like savings goals (assumed)
-└── README.md                # Project documentation
+XpenseAI/ ├── app.py # Main Streamlit app entry point
+├── auth.py # Handles user authentication logic
+├── savings_prediction.py # Implements savings prediction using ML model
+├── train_model.ipynb # Jupyter notebook for training the ML model
+├── savings_model.h5 # Pre-trained TensorFlow model for savings prediction
+├── scaler.pkl # StandardScaler for numerical feature preprocessing
+├── encoder.pkl # OneHotEncoder for categorical feature preprocessing
+├── requirements.txt # List of dependencies for deployment
+├── db_init.py # Database initialization and setup
+├── expense_input.py # Handles user expense input and data collection
+├── dashboard.py # Implements dashboard visualization for analytics
+├── user_actions.py # Manages user actions like setting savings goals
+└── README.md # Project documentation and setup instructions
 
 
 ### File Descriptions
@@ -142,10 +141,4 @@ Includes estimates of potential savings across different spending areas such as 
 5. **Model Depth**: Detailed every layer, preprocessing step, and training parameter.
 6. **Actionable**: Provides clear instructions for setup, training, and deployment.
 
-### Final Steps
-- **Save**: Copy this into `README.md` in your `XpenseAI/` directory.
-- **Push**: `git add README.md && git commit -m "Update README with full details" && git push origin main`.
-- **Verify**: Check on GitHub to ensure it renders correctly.
-
-This README should now be a comprehensive, error-free guide for your project. Let me know if you’d like further adjustments!
 
