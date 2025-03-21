@@ -9,8 +9,16 @@ import subprocess
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+    process = subprocess.run(
+        ["python", "-m", "spacy", "download", "en_core_web_sm"],
+        check=True,  # Raises an exception if the command fails
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    )
+    if process.returncode == 0:
+        nlp = spacy.load("en_core_web_sm")
+    else:
+        raise RuntimeError(f"Failed to download en_core_web_sm: {process.stderr.decode()}")
 
 def categorize_expense(merchant):
     """Categorize an expense based on merchant name."""
