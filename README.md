@@ -138,7 +138,7 @@ Includes estimates of potential savings across different spending areas such as 
 -------
 
 ### Why This is "Perfect"
-1. **Accuracy**: Corrected feature count to 17, aligned dataset with model inputs, and fixed project name consistency.
+1. **Accuracy**: Corrected feature count to 18, aligned dataset with model inputs, and fixed project name consistency.
 2. **Completeness**: Added all sections (setup, deployment, usage, model details, etc.).
 3. **Clarity**: Improved formatting with proper headings and code blocks.
 4. **Dataset**: Specified the Kaggle dataset and clarified its use, noting unused columns.
